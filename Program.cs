@@ -20,8 +20,8 @@
 // Q: число является степенью тройки. 
 // T: число не содержит в своем составе цифру 5.
 
-// #define A
-// #define B
+#define A
+#define B
 
 
 using System;
@@ -44,7 +44,7 @@ namespace ConsoleApplication
             int[] arr = InitArray(IS_DEFINE);
             PrintArray(arr);
 
-            System.Console.WriteLine(IsQ(59042));
+            System.Console.WriteLine(IsT(9042));
         }
 
         public static int[] GenArray(int size, int minValue, int maxValue)
@@ -127,6 +127,16 @@ namespace ConsoleApplication
                 number /= 3;
             }
             return true;
+        }
+
+        public static bool IsT(int number)
+        {
+            while (number > 10)
+            {
+                if (number % 10 == 5) return true;
+                number /= 10;
+            }
+            return (number == 5) ? true : false;
         }
     }
 }
